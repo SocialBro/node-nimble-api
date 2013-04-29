@@ -3,7 +3,7 @@ node-nimble-api
 
 Javascript wrapper for Nimble CRM API
 
-This is a WIP, but currently covers all basic Contacts API methods and Oauth2 authentication process:
+This is a WIP, but currently covers all basic Contacts API methods, Notes API and Oauth2 authentication process:
 
 - Get authorization URL.
 
@@ -17,10 +17,20 @@ This is a WIP, but currently covers all basic Contacts API methods and Oauth2 au
  
 - Utility shortcut methods to find by the main available search fields, both by exact match ("is" operator) and partial match ("contain" operator).
 
-- Search Contacts by id
+- Search Contacts by id.
 
-- Create Contacts
+- Create Contacts.
 
-- Update Contacts
+- Update Contacts.
 
-- Delete Contacts
+- Delete Contacts.
+
+- Show Notes.
+
+- List Contact Notes.
+
+- Create Notes.
+
+- Update Notes.
+
+- Delete Notes.
