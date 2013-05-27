@@ -34,3 +34,5 @@ This is a WIP, but currently covers all basic Contacts API methods, Notes API an
 - Update Notes.
 
 - Delete Notes.
+
+- Create Tasks.
