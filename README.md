@@ -13,13 +13,13 @@ npm install node-nimble-api
 
 **getAuthorizationUrl(params)**:
 
-Generates the authorization url for authentication process [http://nimble.readthedocs.org/en/latest/obtaining_key/#authorization-process-overview](STEP B).
+Generates the authorization url for authentication process http://nimble.readthedocs.org/en/latest/obtaining_key/#authorization-process-overview.
 
 'params': should contain redirect_uri.
 
 **requestToken(code, function(err, accessToken, refreshToken, results) {})**:
 
-Performs authentication token request as a POST using the code sent to the redirect_uri ([http://nimble.readthedocs.org/en/latest/obtaining_key/#authorization-process-overview](STEP E)).
+Performs authentication token request as a POST using the code sent to the redirect_uri (http://nimble.readthedocs.org/en/latest/obtaining_key/#authorization-process-overview STEP B).
 We need to have available the same redirect_uri that is provided in step B for this step.
 This can be provided:
 A) In the constructor
@@ -37,9 +37,10 @@ You can provide the refreshToken received from Nimble or let the wrapper use the
 **findContacts(params, function(err, results, response) {})**:
 
 Performs contacts listing.
-[http://nimble.readthedocs.org/en/latest/contacts/basic/list.html](http://nimble.readthedocs.org/en/latest/contacts/basic/list.html)
 
-**findByFIELD(field, function(err, results, response) {})**:
+http://nimble.readthedocs.org/en/latest/contacts/basic/list.html
+
+**findByFIELD(value, exactly, function(err, results, response) {})**:
 
 For each one of the available search fields, we define a shortcut method findByFIELD.
 These methods receive an exactly parameter that tells if the search is to be made with the "is" operator, or, when available, the "contain" operator.
