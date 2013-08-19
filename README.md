@@ -14,6 +14,7 @@ npm install node-nimble-api
 **getAuthorizationUrl(params)**:
 
 Generates the authorization url for authentication process [http://nimble.readthedocs.org/en/latest/obtaining_key/#authorization-process-overview](STEP B).
+
 'params': should contain redirect_uri.
 
 **requestToken(code, function(err, accessToken, refreshToken, results) {})**:
@@ -23,12 +24,14 @@ We need to have available the same redirect_uri that is provided in step B for t
 This can be provided:
 A) In the constructor
 B) Using the same Nimble object for getAuthorizationUrl and requestToken, as the getAuthorizationUrl function assigns this value
+
 'code': Authorization Grant Code received at the redirect_uri.
 
 **refreshToken(refreshToken, function(err, accesToken, refreshToken, results) {})**:
 
 Refreshes the authorization token in case it has expired.
 You can provide the refreshToken received from Nimble or let the wrapper use the refreshToken provided to the constructor.
+
 'refreshToken': Refresh Token provided by Nimble 
 
 **findContacts(params, function(err, results, response) {})**:
@@ -40,68 +43,84 @@ Performs contacts listing.
 
 For each one of the available search fields, we define a shortcut method findByFIELD.
 These methods receive an exactly parameter that tells if the search is to be made with the "is" operator, or, when available, the "contain" operator.
+
 http://nimble.readthedocs.org/en/latest/contacts/basic/search.html#available-search-fields
+
 TODO: Allow search fields "company last contacted", "created" and "updated".
 
 **findContactsId(params, function(err, results, response){})**:
 
 Performs contacts listing using the /ids endpoint, where only ids will be returned.
+
 http://nimble.readthedocs.org/en/latest/contacts/basic/list.html
 
 **findContactsById(ids, function(err, results, response) {})**:
 
 Gets contacts by their id.
 May receive a comma separated list of ids, a single id, or an array of ids
+
 http://nimble.readthedocs.org/en/latest/contacts/basic/details.html
 
 **createContact(params, function(err, results, response) {})**:
 
 Creates contacts.
+
 http://nimble.readthedocs.org/en/latest/contacts/basic/create.html
 
 **updateContact(id, params, function(err, results, response) {})**:
 
 Updates contacts.
+
 http://nimble.readthedocs.org/en/latest/contacts/basic/update.html
 
 **deleteContact(ids, function(err, results, response) {})**:
 
 Deletes contacts.
 May receive a comma separated list of ids, a single id, or an array of ids.
+
 http://nimble.readthedocs.org/en/latest/contacts/basic/delete.html
 
 **showNote(id, function(err, results, response) {})**:
 
 Gets notes by their id.
+
 http://nimble.readthedocs.org/en/latest/contacts/notes/show.html 
 
 **listContactNotes(id, function(err, results, response) {})**:
 
 List contact notes, providing contact id.
+
 http://nimble.readthedocs.org/en/latest/contacts/notes/show.html
 
 **createNote(params, function(err, results, response) {})**:
  
 Creates a note for the contacts contained in params.contacts_ids.
+
 http://nimble.readthedocs.org/en/latest/contacts/notes/create.html
+
 'params': required params for notes creation: contacts_ids, note, and note_preview
 
 **udpateNote(id, params, function(err, results, response) {})**:
 
 Updates a note, providing note id.
+
 http://nimble.readthedocs.org/en/latest/contacts/notes/update.html
+
 'params': required params for notes creation: contacts_ids, note, and note_preview
 
 **deleteNote(id, function(err, results, response) {})**:
 
 Deletes a note.
+
 http://nimble.readthedocs.org/en/latest/contacts/notes/delete.html
 
 **createTask(params, function(err, results, response) {})**:
 
 Creates a new task.
 As the due_date must have the format 'YYYY-MM-DD HOURS:MINUTES' we try to perform a conversion in case the string provided does not match the required format.
+
 https://nimble.readthedocs.org/en/latest/activities/tasks/create.html
+
 'params': required param for task creation: subject
 
 
